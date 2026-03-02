@@ -78,18 +78,34 @@ For each criterion, report: ✅ PASS | ❌ FAIL | ⚠️ PARTIAL
 
 ---
 
-### Phase 3: Project Bootstrap
+### Phase 3A — Project Scaffold
 
-| # | Criterion                                    | Check Method                          |
-|---|----------------------------------------------|---------------------------------------|
-| 1 | Project builds/runs (even if empty)           | Run build command                     |
-| 2 | All docs generated and approved               | Check docs/ structure                 |
-| 3 | TASKS.md has prioritized backlog              | Read docs/dev/tasks/TASKS.md          |
-| 4 | First task has DETAIL.md                      | Check first task directory            |
-| 5 | Git initialized with dev branch               | Run: git branch                       |
-| 6 | Initial commit exists on dev                   | Run: git log --oneline -1             |
-| 7 | CLAUDE.md project section populated            | Read CLAUDE.md project context        |
-| 8 | CONTEXT.md initialized                         | Check CONTEXT.md exists and populated |
+| # | Criterion                                         | Check Method                          |
+|---|---------------------------------------------------|---------------------------------------|
+| 1 | Project builds/runs (even if empty entry points)  | Run build command                     |
+| 2 | Directory structure matches ARCHITECTURE.md        | Diff structure vs architecture        |
+| 3 | TASKS.md populated with must-haves from SPEC.md   | Read TASKS.md, cross-ref SPEC.md      |
+| 4 | First task has DETAIL.md                          | Check docs/dev/tasks/T-001/DETAIL.md  |
+| 5 | Git initialized with dev branch                   | Run: git branch                       |
+| 6 | AX-000 initial commit exists                      | Run: git log --oneline -1             |
+| 7 | CONTEXT.md initialized and populated              | Read CONTEXT.md                       |
+| 8 | ENV_SETUP.md untouched (3B not yet run)           | Check ENV_SETUP.md status field       |
+| 9 | User approved                                     | Ask user                              |
+
+### Phase 3B — Environment Setup
+
+| # | Criterion                                         | Check Method                                    |
+|---|---------------------------------------------------|-------------------------------------------------|
+| 1 | GitHub repo created with correct visibility       | gh repo view or ask user                        |
+| 2 | dev branch pushed and set as default              | git branch -r                                   |
+| 3 | Branch protection active on main                  | gh api or ask user                              |
+| 4 | CI/CD pipeline file exists                        | Check .github/workflows/ci.yml                  |
+| 5 | At least one successful CI run on dev             | Check GitHub Actions status or ask user         |
+| 6 | All secrets documented as present in ENV_SETUP.md | Read ENV_SETUP.md secrets section               |
+| 7 | .env.example exists with all required keys        | Check .env.example vs ENV_SETUP.md secrets      |
+| 8 | ENV_SETUP.md status field set to VERIFIED         | Read ENV_SETUP.md status                        |
+| 9 | AX-001 and AX-002 commits exist                   | Run: git log --oneline                          |
+| 10| User approved                                     | Ask user                                        |
 
 **For build-in-public intent, additionally:**
 | 9 | Content plan exists                            | Check docs/gtm/CONTENT_PLAN.md       |

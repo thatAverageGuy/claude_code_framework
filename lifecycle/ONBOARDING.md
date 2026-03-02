@@ -43,6 +43,8 @@ Create missing critical docs if absent:
 - No VISION.md → run abbreviated Phase 0 interview
 - No SPEC.md → document observed features as requirements (user confirms)
 - No ARCHITECTURE.md → generate from codebase observation (user confirms)
+- No ENV_SETUP.md → run /env-setup in onboarding mode (interactive audit checklist)
+- ENV_SETUP.md exists → diff against actual environment state, document gaps
 
 ### Step 4 — Populate CLAUDE_STATE.md
 Set:

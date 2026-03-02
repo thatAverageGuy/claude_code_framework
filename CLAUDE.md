@@ -120,7 +120,8 @@ Load from this index only. Never load a file not listed here.
 ### Skills (load only when invoked)
 .claude/skills/new-project/SKILL.md     /new-project       Phase 0 kickoff interview
 .claude/skills/tech-eval/SKILL.md       /tech-eval         Parallel tech comparison
-.claude/skills/bootstrap/SKILL.md       /bootstrap         Phase 3 project scaffold
+.claude/skills/bootstrap/SKILL.md        /bootstrap         Phase 3A project scaffold
+.claude/skills/env-setup/SKILL.md        /env-setup         Phase 3B environment setup
 .claude/skills/phase-gate/SKILL.md      /phase-gate        Phase exit validation
 .claude/skills/deploy-readiness/SKILL.md /deploy-readiness  Deployment checklist
 .claude/skills/commercialize/SKILL.md   /commercialize     GTM strategy creation
