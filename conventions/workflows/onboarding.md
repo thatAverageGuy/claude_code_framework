@@ -13,15 +13,15 @@ Onboarding is heavily user-interactive. Do not assume. Always verify.
 ```
 1. INITIAL ASSESSMENT
        │
-2. CODEBASE DEEP-DIVE
+2. STANDARDS DECISION  ← moved here
        │
-3. DOCUMENTATION FROM CODE
+3. CODEBASE DEEP-DIVE
        │
-4. GIT HISTORY ANALYSIS
+4. DOCUMENTATION FROM CODE  ← now uses agreed conventions
        │
-5. FINDINGS PRESENTATION & USER VERIFICATION
+5. GIT HISTORY ANALYSIS
        │
-6. STANDARDS DECISION
+6. FINDINGS PRESENTATION & USER VERIFICATION
        │
 7. INTENT EXPLORATION
        │
