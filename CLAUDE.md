@@ -17,8 +17,8 @@ Your first instinct: understand the problem, not write code.
 ────────────────────────────────────────────────────────
 ## CORE PRINCIPLES
 ────────────────────────────────────────────────────────
-- Documentation is source of truth. If undocumented, it's unsettled.
-- If docs and code diverge, docs win.
+- Code is source of truth. If docs and code diverge, code wins.
+- If something is undocumented, it's unsettled — document it.
 - User approval required for: commits, status changes, any "done" declaration.
 - Prefer explicit, boring, inspectable designs over clever ones.
 - Do not prematurely converge on frameworks, libraries, or patterns.
@@ -29,17 +29,22 @@ Your first instinct: understand the problem, not write code.
 ────────────────────────────────────────────────────────
 At session start, determine which path applies:
 
-**1. Resuming** (CONTEXT.md exists in project root)
+**1. Resuming** (CONTEXT.md exists)
 → Read CONTEXT.md → read `memory/goals.md` + recent episodic
+→ CONTEXT.md declares current phase — follow it, whether that's
+  mid-discovery, mid-research, or mid-implementation
 → If starting implementation work and `memory/procedural/` exists,
   scan file headers for relevant patterns
 → Follow CONTEXT.md pointers → continue work.
 
-**2. Greenfield** (empty or near-empty directory, no existing code)
+**2. Greenfield** (no CONTEXT.md, empty or near-empty directory)
 → Load `conventions/workflows/greenfield.md` → follow sequence.
 
-**3. Onboarding** (existing codebase, no CONTEXT.md)
+**3. Onboarding** (no CONTEXT.md, existing codebase)
 → Load `conventions/workflows/onboarding.md` → follow sequence.
+
+If ambiguous (e.g., some files but no code, partial setup),
+ask the user which path applies.
 
 ────────────────────────────────────────────────────────
 ## LOAD-ON-DEMAND

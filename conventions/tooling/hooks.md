@@ -14,13 +14,15 @@ echoes content to Claude's context.
 **Why**: Every session starts informed without Claude spending
 tokens deciding what to load.
 
-### PreCompact — Working Snapshot
+### PreCompact — Usage Snapshot + Working Snapshot + Memory Flush
 **Event**: `PreCompact`
-**What**: Prompts Claude to write `memory/working_snapshot.md`
-with current task state, in-flight work, and key decisions
-before compaction wipes the context.
-**Why**: CONTEXT.md is written at session end — stale mid-session.
-This captures live state right before compaction happens.
+**What**: Three actions before compaction:
+1. Snapshots token usage (same script as SessionEnd)
+2. Prompts Claude to write structured `memory/working_snapshot.md`
+3. Prompts Claude to flush any unwritten semantic/procedural memory
+**Why**: Compaction is a boundary. Capture everything before it's lost:
+token state, task state, and any facts/patterns that haven't been
+persisted yet.
 
 ### SessionStart (compact) — Post-Compact Re-inject
 **Event**: `SessionStart` (matcher: `compact`)
@@ -47,10 +49,13 @@ forgets.
 
 ### SessionEnd — Token Usage Tracker
 **Event**: `SessionEnd`
-**What**: Parses session transcript JSONL, extracts cumulative
-token counts, appends structured row to `memory/usage/YYYY-MM-DD.md`.
-**Why**: Hard data on token consumption per session. Correlate
-with raw logs to see which work patterns cost the most.
+**What**: Parses session transcript JSONL, extracts token counts,
+writes per-session detail to `memory/usage/sessions/<id>.md`
+and summary row to `memory/usage/YYYY-MM-DD.md`.
+Also runs at PreCompact for mid-session snapshots (daily table
+shows both "pre-compact snapshot" and "final" entries).
+**Why**: Hard data on token consumption. Correlate with raw logs
+to see which work patterns cost the most.
 **Requires**: `jq` installed and on PATH.
 **Script**: `.claude/hooks/track-usage.sh`
 

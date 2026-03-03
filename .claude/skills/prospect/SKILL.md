@@ -1,7 +1,6 @@
 ---
 name: prospect
 description: Plan and execute targeted outreach campaigns — prospect research, email sequences, sales collateral, demo specs. For consulting and client acquisition.
-disable-model-invocation: true
 argument-hint: "[target-segment-or-company]"
 ---
 

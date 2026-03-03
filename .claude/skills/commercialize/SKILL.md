@@ -1,7 +1,6 @@
 ---
 name: commercialize
 description: Create commercialization strategy — market analysis, pricing, positioning, go-to-market plan. For SaaS, product, or commercial projects.
-disable-model-invocation: true
 argument-hint: "[focus-area]"
 ---
 

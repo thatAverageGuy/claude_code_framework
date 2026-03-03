@@ -24,7 +24,7 @@ A new session reads this FIRST, then follows the pointers.
 # CONTEXT
 
 ## Current State
-**Task**: T-012 | **Phase**: Implementation | **Status**: IN_PROGRESS
+**Active Task**: T-012 | **Phase**: Implementation | **Status**: IN_PROGRESS
 **Branch**: dev | **Last Commit**: a3f8c2d | **Date**: 2026-02-22
 
 ## Previous Session Summary
@@ -36,6 +36,11 @@ A new session reads this FIRST, then follows the pointers.
 - Core middleware logic: DONE
 - Unit tests: DONE (12/12 passing)
 - Integration tests: NOT STARTED
+
+## Parked / Blocked Tasks
+[Tasks that are waiting on something — keeps them visible]
+- T-015: BLOCKED — waiting on external API access (requested 2026-02-20)
+- [or "None"]
 
 ## Next Steps
 1. [ ] Write integration tests for T-012

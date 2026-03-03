@@ -24,8 +24,13 @@
       {
         "hooks": [
           {
+            "type": "command",
+            "command": "bash .claude/hooks/track-usage.sh",
+            "async": false
+          },
+          {
             "type": "prompt",
-            "prompt": "Before compaction, write a working snapshot to memory/working_snapshot.md. Include: current task ID and status, what you were doing right now, key decisions made this session, any in-flight state that would be lost. Keep it under 30 lines. Use the Write tool."
+            "prompt": "Before compaction, do two things:\n\n1. Write memory/working_snapshot.md with this structure:\n```\n# Working Snapshot\n## Active Task\n[task ID, status, what phase]\n## Current Activity\n[what you were doing right now, specific enough to resume]\n## Decisions Made This Session\n- [decision]: [rationale]\n## Blocked Tasks\n[any tasks parked with reason, or \"None\"]\n## In-Flight State\n[anything that would be lost — partial analysis, uncommitted findings, etc.]\n```\nKeep it under 30 lines.\n\n2. Check if any new project facts or validated patterns emerged this session that haven't been written to memory yet. If so, write them now:\n- New facts → memory/semantic/ (create file if needed)\n- Validated patterns or failures → memory/procedural/ (create file if needed)\nSkip this if nothing new emerged. Don't force it."
           }
         ]
       }

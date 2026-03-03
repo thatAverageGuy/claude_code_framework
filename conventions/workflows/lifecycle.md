@@ -74,4 +74,25 @@ docs/
   discovery provides full clarity)
 - Looping back is always allowed and encouraged
 - Every stage produces a documented output
-- User approval gates every transition (except EXECUTE → REVIEW)
+
+### Stage Gate Protocol
+When transition criteria for a stage are not fully met:
+1. **STOP.** Do not proceed silently.
+2. **Flag exactly what's unmet** — be specific, not vague.
+3. **Wait for user decision.** User may:
+   - Complete the missing criteria
+   - Override and proceed anyway
+   - Loop back to address it
+4. **Log the decision** in the stage's output doc (e.g.,
+   `docs/discovery/findings.md`, `docs/strategy/strategy.md`):
+   ```
+   ## Transition Override — [date]
+   **Unmet**: [what was flagged]
+   **Decision**: [proceed / loop back / defer]
+   **Rationale**: [user's reasoning]
+   ```
+   This stays visible for future sessions — it's not buried
+   in episodic memory or CONTEXT.md.
+
+The user always has final say. But the decision is recorded,
+not silent.

@@ -1,8 +1,11 @@
 ---
 name: commit
 description: Execute the full commit procedure. Use after implementation is complete and tests pass.
-disable-model-invocation: true
 ---
+
+**CONFIRMATION REQUIRED**: This skill stages, commits, and pushes
+code. Always stop and get explicit user confirmation before
+executing, even if bypass permissions is enabled.
 
 Execute the commit procedure from `conventions/development/git_workflow.md`.
 

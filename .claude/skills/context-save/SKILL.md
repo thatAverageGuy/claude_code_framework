@@ -1,7 +1,6 @@
 ---
 name: context-save
 description: Save session state for handoff. Updates CONTEXT.md and writes episodic memory entry.
-disable-model-invocation: true
 ---
 
 Standardized session handoff. Run before ending a session or

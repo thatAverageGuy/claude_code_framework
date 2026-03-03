@@ -24,6 +24,26 @@ When to use skills, agents, hooks, or convention files.
 - Don't bloat skills — under 70 lines, let convention files carry detail
 
 ────────────────────────────────────────────────────────
+## SKILL INVOCATION & CONFIRMATION
+────────────────────────────────────────────────────────
+All skills are Claude-invokable — Claude can suggest and trigger
+them when contextually relevant. However:
+
+**Destructive skills require explicit user confirmation before
+execution, even if bypass permissions is enabled:**
+- `/bootstrap` — scaffolds entire project structure, creates files
+- `/commit` — stages, commits, and pushes code
+- `/create-tool` — creates or modifies skills and agents
+
+Claude must stop and say "I'd like to run /bootstrap (or /commit)
+— here's what it will do: [summary]. Proceed?" and wait for
+an explicit yes before executing any steps.
+
+Other skills (`/status`, `/context-save`, `/tech-eval`,
+`/commercialize`, `/promote`, `/prospect`) can run when
+contextually appropriate without a confirmation gate.
+
+────────────────────────────────────────────────────────
 ## SKILL FAILURE HANDLING
 ────────────────────────────────────────────────────────
 Skills are linear step sequences. If a step fails:
@@ -50,14 +70,13 @@ commit procedure. `/commit` skill executes it step by step.
 ────────────────────────────────────────────────────────
 
 **Core** — always available, any project:
-`/commit`, `/bootstrap`, `/tech-eval`, `/status`, `/context-save`
+`/commit`, `/bootstrap`, `/tech-eval`, `/status`, `/context-save`,
+`/create-tool`
 
 **Intent-specific** — loaded when intent establishes relevance:
 `/commercialize`, `/promote`, `/prospect`
 
-Intent-specific skills have `disable-model-invocation: true`.
-This means Claude won't auto-trigger them — the user must invoke
-them explicitly (e.g., `/commercialize`, `/promote`, `/prospect`).
-This is intentional: their descriptions don't consume context
-unless needed, and the user decides when commercial/outreach
-work is relevant.
+Intent-specific skills can be auto-triggered by Claude when
+the conversation context is relevant (e.g., user discusses
+outreach → Claude suggests `/prospect`). They can also be
+invoked explicitly by the user.

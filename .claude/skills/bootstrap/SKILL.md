@@ -1,8 +1,11 @@
 ---
 name: bootstrap
 description: Scaffold project structure, generate initial documentation, setup environment, and make first commit (AX-001).
-disable-model-invocation: true
 ---
+
+**CONFIRMATION REQUIRED**: This skill creates files and scaffolds
+the project. Always stop and get explicit user confirmation
+before executing, even if bypass permissions is enabled.
 
 Project setup — always the first task (AX-001).
 Run after discovery, research, analysis, and strategy are complete.

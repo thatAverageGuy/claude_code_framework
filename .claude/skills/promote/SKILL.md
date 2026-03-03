@@ -1,7 +1,6 @@
 ---
 name: promote
 description: Create visibility and promotion strategy — content plan, social media, blog posts, community building. For public, portfolio, or open-source projects.
-disable-model-invocation: true
 argument-hint: "[platform-or-focus]"
 ---
 
