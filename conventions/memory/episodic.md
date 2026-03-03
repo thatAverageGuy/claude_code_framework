@@ -89,3 +89,17 @@ No automated archival or scheduled maintenance.
 Semantic and procedural memory are written during the session,
 not distilled from episodic entries after the fact.
 Episodic is a record of what happened — not a staging area.
+
+────────────────────────────────────────────────────────
+## EPISODIC vs CONTEXT.md
+────────────────────────────────────────────────────────
+Both capture "what happened" but serve different purposes:
+
+- **CONTEXT.md** = resumption state. "Where am I right now, what
+  do I do next." Overwritten each session. Read by the next session
+  to pick up where it left off.
+- **Episodic** = historical record. "What happened on this date."
+  Append-only. Read for pattern recognition, historical context,
+  or understanding past decisions.
+
+If CONTEXT.md is a bookmark, episodic is the journal.

@@ -7,6 +7,10 @@ disable-model-invocation: true
 Project setup — always the first task (AX-001).
 Run after discovery, research, analysis, and strategy are complete.
 
+Bootstrap does NOT regenerate docs that already exist from earlier
+stages (ARCHITECTURE.md, ADRs, strategy docs, etc.). It scaffolds
+the project structure and consolidates existing work into it.
+
 ## Prerequisites
 - Discovery findings doc exists
 - Strategy doc exists (or decisions are documented)
@@ -19,16 +23,18 @@ Run after discovery, research, analysis, and strategy are complete.
    - Directory layout per `conventions/documentation/structure.md`
    - Source code skeleton per architecture decisions
    - Test directory structure
+   - Move existing docs (findings, strategy, ADRs, etc.) into
+     the proper `docs/` structure
 
-2. **Generate documentation**
+2. **Create remaining documentation**
+   Only create docs that don't already exist from earlier stages:
    - README.md (user-facing overview)
-   - ARCHITECTURE.md (from design decisions)
-   - STATE_MACHINES.md (system + component level)
-   - SPEC.md (from requirements)
    - CONTRIBUTING.md (project conventions)
    - CHANGELOG.md (initial entry)
    - docs/README.md (documentation index)
    - Populate project context from template
+   - Do NOT regenerate ARCHITECTURE.md, STATE_MACHINES.md, SPEC.md,
+     ADRs, or strategy docs — these already exist
 
 3. **Create task backlog**
    - TASKS.md with sequenced work items from strategy
@@ -49,7 +55,6 @@ Run after discovery, research, analysis, and strategy are complete.
 6. **Initialize memory**
    - Create `memory/` directory structure
    - Write initial `memory/goals.md`
-   - Write initial `memory/semantic/self.md`
 
 7. **Create CONTEXT.md**
    - Current state after setup
@@ -57,10 +62,15 @@ Run after discovery, research, analysis, and strategy are complete.
 
 8. **Present everything for approval**
    - Show full file tree
-   - Summarize what was created
+   - Summarize what was created vs what was moved/consolidated
    - Get explicit user approval
 
 9. **First commit**
    - Stage all files
    - Commit: `AX-001: Project setup - Initial scaffold and documentation`
    - Push to dev branch
+
+## On Failure
+If any step fails, stop and surface to user. Do not skip steps.
+If environment setup fails (package install, CI config), document
+what failed and what the user needs to do manually.

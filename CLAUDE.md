@@ -48,6 +48,11 @@ Do NOT read all convention files at session start.
 Load a file from `conventions/` only when its topic becomes relevant.
 Use the descriptions below to judge relevance.
 
+Same applies to `memory/` — only `goals.md` and recent episodic
+are loaded at start (by hook). Semantic and procedural files are
+read only when the current task touches their domain. When in
+doubt, ask the user rather than preemptively loading.
+
 ────────────────────────────────────────────────────────
 ## REFERENCE INDEX
 ────────────────────────────────────────────────────────

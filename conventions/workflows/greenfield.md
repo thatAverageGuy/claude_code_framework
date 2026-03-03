@@ -173,17 +173,9 @@ All steps (autonomous and manual) are logged in detail:
 ────────────────────────────────────────────────────────
 **Protocol**: `conventions/development/git_workflow.md`
 
-After project setup, the first commit lands. It includes:
-- Project skeleton (directory structure, config files)
-- All bootstrapped documentation:
-  - README.md
-  - CONTEXT.md
-  - CHANGELOG.md
-  - docs/ structure with all discovery/strategy/design docs
-  - TASKS.md with planned work items
-- AX-001 IMPL_LOG.md and DETAIL.md
-
-Follow full commit procedure from git_workflow convention.
+The last step of `/bootstrap` — commits everything scaffolded
+and consolidated during project setup. Follow full commit
+procedure from git_workflow convention.
 
 ────────────────────────────────────────────────────────
 ## 9. PLAN → EXECUTE → REVIEW (Cycles)

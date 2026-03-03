@@ -25,6 +25,11 @@ TASKS.md is a lean status table. No details.
 Statuses: `TODO` → `IN_PROGRESS` → `DONE` or `BLOCKED`
 Ordering implies priority (highest first).
 
+**Concurrent tasks**: One task is active at a time. If a task
+is blocked, move it to the Blocked table and start the next
+unblocked task. CONTEXT.md tracks the active task. When a
+blocker resolves, decide with the user which task to resume.
+
 ────────────────────────────────────────────────────────
 ## DETAIL.md (Task Planning)
 ────────────────────────────────────────────────────────

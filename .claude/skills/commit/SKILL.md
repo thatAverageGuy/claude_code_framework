@@ -46,3 +46,15 @@ Execute the commit procedure from `conventions/development/git_workflow.md`.
 
 10. **Update memory**
     - Append to episodic memory if significant session work
+
+## On Failure
+
+- **Step 2 (tests fail)**: STOP. Do not proceed. Show failures
+  to user. Fix the code, not the tests (unless tests are wrong).
+- **Step 7 (user rejects)**: STOP. Ask what needs to change.
+  Do not re-attempt without addressing feedback.
+- **Step 9 (push fails)**: Do not force-push. Show the error.
+  Common causes: remote ahead (pull first), auth issues, branch
+  protection. Surface to user for resolution.
+- **Any other step**: Stop and tell the user what failed and why.
+  Never skip a step to continue the sequence.

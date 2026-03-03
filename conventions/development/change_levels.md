@@ -26,7 +26,9 @@ All actions must declare a change level.
 - New abstractions allowed
 - Requires updating ARCHITECTURE.md or creating a new ADR
 
-**DEFAULT**: If no level stated, assume LEVEL 0.
+**DEFAULT**: If no level stated for a specific action, assume LEVEL 0.
+Change levels apply to individual actions, not to session behavior.
+A session can involve multiple actions at different levels.
 If a requested action violates the declared level, STOP and explain the conflict.
 
 ────────────────────────────────────────────────────────

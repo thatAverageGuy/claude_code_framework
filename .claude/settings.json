@@ -47,7 +47,7 @@
         "hooks": [
           {
             "type": "prompt",
-            "prompt": "Check if significant work was done this session (code changes, decisions, task progress). If yes, respond with {\"ok\": false, \"reason\": \"Consider running /context-save before ending the session.\"}. If the session was just Q&A or minor, respond with {\"ok\": true}."
+            "prompt": "Check if significant work was done this session — this includes code changes, decisions, research findings, design work, discovery sessions, or any task progress. Non-commit sessions (research, design, discovery) still produce state worth saving. If significant work was done, respond with {\"ok\": false, \"reason\": \"Consider running /context-save before ending the session.\"}. If the session was just Q&A or trivial, respond with {\"ok\": true}."
           }
         ]
       }

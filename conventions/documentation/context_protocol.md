@@ -7,7 +7,11 @@ A new session reads this FIRST, then follows the pointers.
 ────────────────────────────────────────────────────────
 ## UPDATE RULES
 ────────────────────────────────────────────────────────
-- Updated at every commit (part of commit procedure)
+- Updated at every significant session end (via `/context-save`)
+- Also updated at every commit (part of commit procedure)
+- Non-commit sessions (research, design, discovery) still produce
+  state worth capturing — don't skip CONTEXT.md just because no
+  code was written
 - Previous session context archived to `docs/dev/session_context/`
   (format: `session_YYYY-MM-DD.md`) before overwriting
 - Must reflect TRUE current state — not aspirational state

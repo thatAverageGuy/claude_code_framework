@@ -24,6 +24,16 @@ When to use skills, agents, hooks, or convention files.
 - Don't bloat skills — under 70 lines, let convention files carry detail
 
 ────────────────────────────────────────────────────────
+## SKILL FAILURE HANDLING
+────────────────────────────────────────────────────────
+Skills are linear step sequences. If a step fails:
+- **Stop immediately.** Do not skip the step to continue.
+- **Surface the failure to the user** with what failed and why.
+- **Never proceed past a destructive step** (push, delete, deploy)
+  without explicit user confirmation that the prior steps succeeded.
+Skills with specific failure paths document them in `## On Failure`.
+
+────────────────────────────────────────────────────────
 ## SKILL vs CONVENTION FILE
 ────────────────────────────────────────────────────────
 **Skill**: Orchestrates a process. Steps to execute in order.
@@ -40,12 +50,14 @@ commit procedure. `/commit` skill executes it step by step.
 ────────────────────────────────────────────────────────
 
 **Core** — always available, any project:
-`/commit`, `/discover`, `/bootstrap`, `/tech-eval`,
-`/gate-check`, `/context-save`
+`/commit`, `/bootstrap`, `/tech-eval`, `/status`, `/context-save`
 
 **Intent-specific** — loaded when intent establishes relevance:
 `/commercialize`, `/promote`, `/prospect`
 
-Intent-specific skills should have `disable-model-invocation: true`
-so their descriptions don't consume context unless the user
-explicitly invokes them.
+Intent-specific skills have `disable-model-invocation: true`.
+This means Claude won't auto-trigger them — the user must invoke
+them explicitly (e.g., `/commercialize`, `/promote`, `/prospect`).
+This is intentional: their descriptions don't consume context
+unless needed, and the user decides when commercial/outreach
+work is relevant.
