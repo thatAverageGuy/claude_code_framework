@@ -1,0 +1,67 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'if [ -f memory/goals.md ]; then echo \"=== PROJECT GOALS ===\"; cat memory/goals.md; fi; LATEST=$(ls -t memory/episodic/*.md 2>/dev/null | head -1); if [ -n \"$LATEST\" ]; then echo \"\\n=== LATEST SESSION ===\"; cat \"$LATEST\"; fi'"
+          }
+        ]
+      },
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'if [ -f memory/working_snapshot.md ]; then echo \"=== WORKING SNAPSHOT (pre-compact) ===\"; cat memory/working_snapshot.md; rm memory/working_snapshot.md; fi; if [ -f CONTEXT.md ]; then echo \"\\n=== CONTEXT ===\"; cat CONTEXT.md; fi; if [ -f memory/goals.md ]; then echo \"\\n=== GOALS ===\"; cat memory/goals.md; fi'"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Before compaction, write a working snapshot to memory/working_snapshot.md. Include: current task ID and status, what you were doing right now, key decisions made this session, any in-flight state that would be lost. Keep it under 30 lines. Use the Write tool."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/raw-logger.sh",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Check if significant work was done this session (code changes, decisions, task progress). If yes, respond with {\"ok\": false, \"reason\": \"Consider running /context-save before ending the session.\"}. If the session was just Q&A or minor, respond with {\"ok\": true}."
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/track-usage.sh",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,58 +1,58 @@
-# CLAUDE.md
+# Goals Memory
 
-You are a staff-level software engineer and architecture partner.
-
-This session has one goal: **co-design a new CLAUDE.md from scratch with the user.**
-
-Nothing is decided yet. No structure is assumed. We are designing together.
+Project goals organized by timeframe. Read at session start
+to maintain alignment with project direction.
 
 ────────────────────────────────────────────────────────
-## YOUR ROLE
+## LOCATION
 ────────────────────────────────────────────────────────
-
-- Think partner, not executor.
-- Propose, challenge, question. Never just build what you're told without thinking.
-- Raise tradeoffs. Point out what could go wrong.
-- Write nothing to disk until the design is agreed and the user says go.
+`memory/goals.md` (project root of memory dir, not nested)
 
 ────────────────────────────────────────────────────────
-## CONTEXT
+## WHEN TO WRITE
 ────────────────────────────────────────────────────────
-
-The user has an existing CLAUDE.md (in this repo) that works but is limited.
-They want to redesign it — from scratch — into something more powerful.
-
-Known desired themes (not requirements — explore these together):
-- Agents
-- Skills / on-demand loading
-- Conventions
-- Lifecycle management
-- Context bloat prevention
-- Load-on-demand architecture
-
-These are directions, not decisions. Question them. Refine them. Find better framings.
+- Goals change or new goals emerge
+- Milestones are hit
+- Priorities shift
+- Strategy phase produces new objectives
 
 ────────────────────────────────────────────────────────
-## GROUND RULES
+## WHEN TO READ
 ────────────────────────────────────────────────────────
-
-1. No file changes until the user explicitly says to build.
-2. No assumptions about what the final CLAUDE.md will look like.
-3. If you have an opinion, state it as an opinion.
-4. One thing at a time. Don't present 10 decisions simultaneously.
-5. When in doubt: ask.
+- Every session start
+- During planning phases
+- During review phases
+- When evaluating whether current work aligns with direction
 
 ────────────────────────────────────────────────────────
-## SESSION START
+## FORMAT
 ────────────────────────────────────────────────────────
 
-Read the existing CLAUDE_OLD.md in this repo.
-Then say: "I've read the existing file. Ready to redesign it — where do you want to start?"
+```markdown
+# Project Goals
 
-Nothing else. Wait for the user.
+## Short-term (this week / next 2 weeks)
+- [ ] [goal] — [target date] — [context/task reference]
+- [ ] [goal] — [target date]
+
+## Medium-term (this month / this quarter)
+- [ ] [goal] — [target date]
+- [ ] [goal] — [target date]
+
+## Long-term (this year / project lifetime)
+- [ ] [goal]
+- [ ] [goal]
+
+## Recently Completed
+- [x] [goal] — completed [date] — [outcome]
+- [x] [goal] — completed [date] — [outcome]
+
+Last updated: [date]
+```
 
 ────────────────────────────────────────────────────────
-## AUTHOR
+## RETENTION
 ────────────────────────────────────────────────────────
-GitHub: thatAverageGuy
-Email:  yogesh.singh893@gmail.com
+- Active until resolved or abandoned
+- Move completed goals to "Recently Completed"
+- Clean up completed entries when the list gets long

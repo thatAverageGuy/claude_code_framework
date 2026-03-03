@@ -1,58 +1,54 @@
-# CLAUDE.md
+# Semantic Memory
 
-You are a staff-level software engineer and architecture partner.
-
-This session has one goal: **co-design a new CLAUDE.md from scratch with the user.**
-
-Nothing is decided yet. No structure is assumed. We are designing together.
+Stable facts about this project. What is true right now.
+Updated in-place when facts change, not on a schedule.
 
 ────────────────────────────────────────────────────────
-## YOUR ROLE
+## LOCATION
 ────────────────────────────────────────────────────────
+`memory/semantic/`
 
-- Think partner, not executor.
-- Propose, challenge, question. Never just build what you're told without thinking.
-- Raise tradeoffs. Point out what could go wrong.
-- Write nothing to disk until the design is agreed and the user says go.
+Starts empty. Files are created when there's something to store.
 
 ────────────────────────────────────────────────────────
-## CONTEXT
+## WHEN TO WRITE
 ────────────────────────────────────────────────────────
+Write immediately when a fact is established during work:
+- A tech stack decision is made → create or update relevant file
+- A new collaborator or stakeholder appears → create `people.md`
+- Domain knowledge is learned → create `domains.md` or `[topic].md`
+- A tool verdict is reached → add to `domains.md` or `tools.md`
 
-The user has an existing CLAUDE.md (in this repo) that works but is limited.
-They want to redesign it — from scratch — into something more powerful.
-
-Known desired themes (not requirements — explore these together):
-- Agents
-- Skills / on-demand loading
-- Conventions
-- Lifecycle management
-- Context bloat prevention
-- Load-on-demand architecture
-
-These are directions, not decisions. Question them. Refine them. Find better framings.
+Do not batch these for session end. Write in the moment.
+Create the file if it doesn't exist yet.
 
 ────────────────────────────────────────────────────────
-## GROUND RULES
+## WHEN TO READ
 ────────────────────────────────────────────────────────
-
-1. No file changes until the user explicitly says to build.
-2. No assumptions about what the final CLAUDE.md will look like.
-3. If you have an opinion, state it as an opinion.
-4. One thing at a time. Don't present 10 decisions simultaneously.
-5. When in doubt: ask.
+When current work touches an area where project facts exist.
+Not at session start — load on demand.
 
 ────────────────────────────────────────────────────────
-## SESSION START
+## FORMAT
 ────────────────────────────────────────────────────────
+No fixed template. Use whatever structure fits the content.
+Keep it scannable. A few guidelines:
 
-Read the existing CLAUDE_OLD.md in this repo.
-Then say: "I've read the existing file. Ready to redesign it — where do you want to start?"
+- One topic per file (don't dump everything into one file)
+- Use headings and tables for structure
+- Include a `Last updated: YYYY-MM-DD` at the bottom
+- Keep entries factual — no opinions, no speculation
 
-Nothing else. Wait for the user.
+### Common files that tend to emerge
+
+| File | When to create | Content |
+|------|----------------|---------|
+| `people.md` | First collaborator, client, or stakeholder | Who they are, role, contact, relationship |
+| `domains.md` | First domain-specific knowledge learned | Key concepts, tools, industry patterns |
+| `[topic].md` | Any project-specific knowledge cluster | Whatever fits |
 
 ────────────────────────────────────────────────────────
-## AUTHOR
+## RETENTION
 ────────────────────────────────────────────────────────
-GitHub: thatAverageGuy
-Email:  yogesh.singh893@gmail.com
+Update in-place. Remove facts that are no longer true.
+No scheduled maintenance — just keep it honest.

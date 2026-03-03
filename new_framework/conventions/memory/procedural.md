@@ -1,58 +1,67 @@
-# CLAUDE.md
+# Procedural Memory
 
-You are a staff-level software engineer and architecture partner.
-
-This session has one goal: **co-design a new CLAUDE.md from scratch with the user.**
-
-Nothing is decided yet. No structure is assumed. We are designing together.
+What works and what doesn't on this project. Built from
+experience, not theory. Written in the moment, not batched.
 
 ────────────────────────────────────────────────────────
-## YOUR ROLE
+## LOCATION
 ────────────────────────────────────────────────────────
+`memory/procedural/`
 
-- Think partner, not executor.
-- Propose, challenge, question. Never just build what you're told without thinking.
-- Raise tradeoffs. Point out what could go wrong.
-- Write nothing to disk until the design is agreed and the user says go.
-
-────────────────────────────────────────────────────────
-## CONTEXT
-────────────────────────────────────────────────────────
-
-The user has an existing CLAUDE.md (in this repo) that works but is limited.
-They want to redesign it — from scratch — into something more powerful.
-
-Known desired themes (not requirements — explore these together):
-- Agents
-- Skills / on-demand loading
-- Conventions
-- Lifecycle management
-- Context bloat prevention
-- Load-on-demand architecture
-
-These are directions, not decisions. Question them. Refine them. Find better framings.
+Starts empty. Files are created when there's something
+worth remembering.
 
 ────────────────────────────────────────────────────────
-## GROUND RULES
+## WHEN TO WRITE
 ────────────────────────────────────────────────────────
+Write immediately when:
+- A pattern proves itself (something worked well, worth repeating)
+- A failure teaches something (something broke, don't repeat it)
+- A workflow optimization is discovered (faster/better sequence)
 
-1. No file changes until the user explicitly says to build.
-2. No assumptions about what the final CLAUDE.md will look like.
-3. If you have an opinion, state it as an opinion.
-4. One thing at a time. Don't present 10 decisions simultaneously.
-5. When in doubt: ask.
-
-────────────────────────────────────────────────────────
-## SESSION START
-────────────────────────────────────────────────────────
-
-Read the existing CLAUDE_OLD.md in this repo.
-Then say: "I've read the existing file. Ready to redesign it — where do you want to start?"
-
-Nothing else. Wait for the user.
+Do not write speculative patterns. Only what's been proven
+by experience on this project.
 
 ────────────────────────────────────────────────────────
-## AUTHOR
+## WHEN TO READ
 ────────────────────────────────────────────────────────
-GitHub: thatAverageGuy
-Email:  yogesh.singh893@gmail.com
+Before starting implementation work, scan headers in
+`memory/procedural/` for relevant entries. Skim, don't
+deep-read unless something looks directly applicable.
+
+────────────────────────────────────────────────────────
+## FORMAT
+────────────────────────────────────────────────────────
+No rigid template. Common structures:
+
+**For patterns (things that work):**
+```markdown
+### [Pattern name]
+- **Context**: when this applies
+- **What to do**: the pattern
+- **Why**: evidence or reasoning
+- **Learned from**: [task/date]
+```
+
+**For anti-patterns (things that don't work):**
+```markdown
+### [Anti-pattern name]
+- **What happened**: what was done
+- **Why it failed**: root cause
+- **Do instead**: the alternative
+- **Learned from**: [task/date]
+```
+
+### Common files that tend to emerge
+
+| File | Content |
+|------|---------|
+| `patterns.md` | Approaches that proved effective |
+| `anti-patterns.md` | Failures worth remembering |
+| `workflows.md` | Optimized step sequences |
+
+────────────────────────────────────────────────────────
+## RETENTION
+────────────────────────────────────────────────────────
+Update in-place. Remove patterns that no longer apply.
+No scheduled maintenance.
